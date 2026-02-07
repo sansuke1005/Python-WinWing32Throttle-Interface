@@ -64,7 +64,7 @@ Adjusts the LCD brightness on the PAC unit.
 
 ---
 
-## Maker Lights
+### Maker Lights
 
 ### `set_fault_light1(state: int | bool)`
 
@@ -89,7 +89,7 @@ Turns FIRE light 2 on or off.
 
 ---
 
-## Vibration Motors
+### Vibration Motors
 
 ### `set_vibration1(level: int)`
 
@@ -105,7 +105,7 @@ Sets the intensity of vibration motor 2.
 
 ---
 
-## LCD Display
+### LCD Display
 
 ### `set_lcd(text: str)`
 
