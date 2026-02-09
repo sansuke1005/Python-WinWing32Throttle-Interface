@@ -26,7 +26,7 @@ The `WinWing32Throttle` class provides a simple Python interface for controlling
 
 ### `set_thr_backlight(level: int)`
 
-Sets the backlight brightness of the throttle unit.
+Sets the backlight brightness of the Throttle unit.
 
 **Parameters**
 
@@ -46,7 +46,7 @@ Sets the backlight brightness of the PAC unit.
 
 ### `set_backlight(level: int)`
 
-Sets the backlight brightness of both throttle and PAC units.
+Sets the backlight brightness of both Throttle and PAC units.
 
 **Parameters**
 
@@ -57,6 +57,16 @@ Sets the backlight brightness of both throttle and PAC units.
 ### `set_lcd_brightness(level: int)`
 
 Adjusts the LCD brightness on the PAC unit.
+
+**Parameters**
+
+* `level` — Brightness value (typically 0–255)
+
+---
+
+### `set_maker_brightness(level: int)`
+
+Adjusts the maker light brightness on the Throttle unit.
 
 **Parameters**
 
@@ -151,13 +161,11 @@ Formats and displays a rudder trim value on the LCD.
 * Negative value → left trim (`LXX.X`)
 * Zero → only number (`  0.0`)
 
-
+---
 
 ### `close()`
 
 Closes the HID device connection.
-
----
 
 ## example_FSLABS.py
 
