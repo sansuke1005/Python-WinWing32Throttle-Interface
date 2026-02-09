@@ -26,6 +26,8 @@ vr.clear_sim_variables()
 
 ww = WinWing32Throttle()
 
+ww.set_lcd_brightness(255)
+
 WATCH = {
     "rudder_trim": {
         "expr": "(L:FSL_PED_RUD_TRM)",
@@ -35,7 +37,12 @@ WATCH = {
     "integ": {
         "expr": "(L:VC_PED_INTEG_LT_MainPnl_Knob)",
         "transform": lambda v: map_clamped(v, 3, 270, 0, 255),
-        "apply": ww.set_backlight,
+        "apply": ww.set_backlight, 
+    },
+    "intlt": {
+        "expr": "(L:VC_OVHD_INTLT_AnnLt_Switch)",
+        "transform": lambda v: int(v != 0) * 100 + 155,
+        "apply": ww.set_maker_brightness, 
     },
     "fire1": {
         "expr": "(L:VC_PED_ENGFIRE_1_LT_TOP)",
