@@ -12,6 +12,7 @@ DEV_PAC = 0x01
 
 T_BACKLIGHT = 0x00
 T_LCD       = 0x02
+T_MAKER     = 0x02
 T_FAULT1    = 0x03
 T_FIRE1     = 0x04
 T_FAULT2    = 0x05
@@ -101,7 +102,10 @@ class WinWing32Throttle:
         self.set_pac_backlight(level)
     
     def set_lcd_brightness(self, level: int):
-        self._set_value(DEV_PAC, 0x02, level)
+        self._set_value(DEV_PAC, T_LCD, level)
+
+    def set_maker_brightness(self, level: int):
+        self._set_value(DEV_THR, T_MAKER, level)
 
     def set_fault_light1(self, state: int):
         self._set_value(DEV_THR, T_FAULT1, _bit(state))
